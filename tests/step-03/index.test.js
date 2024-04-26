@@ -1,6 +1,5 @@
-// tests/index.test.js
-
-const { parseQuery } = require('../../src/queryParser');
+const readCSV = require('../../src/csvReader');
+const parseQuery = require('../../src/queryParser');
 
 
 test('Parse SQL Query', () => {
@@ -8,6 +7,6 @@ test('Parse SQL Query', () => {
     const parsed = parseQuery(query);
     expect(parsed).toEqual({
         fields: ['id', 'name'],
-        tableName: 'sample' // Adjusted key to match the returned object structure
+        table: 'sample'
     });
 });
